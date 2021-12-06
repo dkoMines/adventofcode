@@ -1,3 +1,5 @@
+import advent_file_reader
+
 def increased_count(file):
     prev = False
     count = 0
@@ -10,7 +12,6 @@ def increased_count(file):
     return count
 
 def windowed_count(file):
-    file = file.readlines()
     prev = False
     count = 0
     for i in range(len(file)-2):
@@ -21,5 +22,8 @@ def windowed_count(file):
         prev = curr
     return count
 
-file = open('C:/Users/48246/Documents/Fall21/adventofcode/input_problem1.txt', 'r')
-print(windowed_count(file))
+file = advent_file_reader.read_file(1)
+print("part 1:", increased_count(file))
+# part 1: 1681
+print("part 2:", windowed_count(file))
+# part 2: 1704

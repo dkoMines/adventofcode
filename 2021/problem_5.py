@@ -7,9 +7,9 @@ class Cell:
         self.vents = 0
 
 
-def part1(file):
+def part1(file, part):
     cells = []
-    # Generate Cells
+    # Generate a 2d array of 1k x 1k
     for i in range(1000):
         row = []
         for j in range(1000):
@@ -17,7 +17,7 @@ def part1(file):
             row.append(c)
         cells.append(row)
 
-    # Make h v lines
+    # Calc fissure lines from file and place onto 2d array.
     for line in file:
         x1,y1 = line.split(" -> ")[0].split(",")
         x2,y2 = line.split(" -> ")[1].split(",")
@@ -42,7 +42,7 @@ def part1(file):
             for x in range(x1, x2+1):
                 cells[x][y1].vents += 1
         # D Lines
-        else:
+        elif part == 2:
             if abs(x1-x2) == abs(y1-y2):
                 x = x1
                 y = y1
@@ -59,16 +59,18 @@ def part1(file):
                     else:
                         y -= 1
     
-    # Count 2s
+    # Count # of hotspots (2 or more)
     count = 0
     for i in range(1000):
         row = []
         for j in range(1000):
             if cells[i][j].vents >= 2:
                 count += 1
-
     return count
 
 
 file = advent_file_reader.read_file(5)
-print("part1: ",part1(file))
+print("part1: ",part1(file, 1))
+# part1:  5306
+print("part2: ",part1(file, 2))
+# part2:  17787

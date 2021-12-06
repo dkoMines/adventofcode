@@ -41,9 +41,9 @@ def part2(file):
         else:
             l = zeros
         if len(l) == 1:
-            print(int(l[0]), "... ", int(l[0][:-1],2))
+            # print(int(l[0]), "... ", int(l[0][:-1],2))
             ogr = int(l[0],2)
-            print(ogr)
+            # print(ogr)
     # C02
     l = file
     for i in range(len(file[1])-1):
@@ -66,10 +66,12 @@ def part2(file):
             l = zeros
         if len(l) == 1:
             co2 = int(l[0],2)
-            print(co2)
+            # print(co2)
     return ogr*co2
 
 
 file = advent_file_reader.read_file(3)
 print("part1: ", part1(file))
+# part1:  3895776
 print("part2: ", part2(file))
+# part2:  7928162

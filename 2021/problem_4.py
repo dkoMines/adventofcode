@@ -85,4 +85,6 @@ def part1_2(file, part):
 
 file = advent_file_reader.read_file(4)
 print("part1: ", part1_2(file,1))
+# part1:  35670
 print("part2: ", part1_2(file,2))
+# part2:  22704

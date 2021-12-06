@@ -35,5 +35,7 @@ def depth_aim(file):
     return h*d
 
 file = advent_file_reader.read_file(2)
-print(depth_dist(file))
-print(depth_aim(file))
+print("part 1:", depth_dist(file))
+# part 1: 1561344
+print("part 2:", depth_aim(file))
+# part 2: 1848454425
