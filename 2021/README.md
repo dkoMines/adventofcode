@@ -1,0 +1,2 @@
+First time doing advent of code, or really any type of coding event for that matter.
+I've been trying to do it as quickly as I can, but would like to improve some solutions and learn more python tricks.s
